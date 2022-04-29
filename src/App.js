@@ -1,5 +1,5 @@
 import './App.css';
-import VotingCards from './cards/VotingCards'
+import VotingCard from './cards/VotingCard'
 
 import thumbsUp from './assets/img/thumbs-up.svg';
 import thumbsDown from "./assets/img/thumbs-down.svg";
@@ -8,6 +8,8 @@ import popeFrancis from "./assets/img/pope-francis.png";
 import popeFrancisMedium from './assets/img/pope-francis.@2x.png';
 import bgPeople from "./assets/img/bg-people.png";
 import bgPeople2x from "./assets/img/bg-people.@2x.png";
+
+
 
 function App() {
   return (
@@ -115,7 +117,21 @@ function App() {
           </aside>
           <main role="main" id="voting__cards">
 
-            <VotingCards/>
+            <h2 style={{fontWeight: "300", fontSize: '24px' }}>Previous Rulings </h2>
+
+            {
+              //if view is more than mobile
+                // display dropdown
+            }
+
+            {
+              //data.json.map(( dataObj ) => {
+
+                //return <VotingCard data={data}/>
+                //})
+            }
+
+            <VotingCard/>
 
           </main>
           <aside className="banner banner-bottom" role="doc-tip" aria-label="Submit a name">

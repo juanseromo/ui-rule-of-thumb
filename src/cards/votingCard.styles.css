@@ -1,0 +1,90 @@
+
+.card_container {
+    width: 300px;
+    min-height: 300px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+/* if mediaquery is mobile return max with 400px else return width 100% */
+}
+
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .card_container {
+        width: 100%;
+    }
+}
+
+.button_thumb {
+    width: 30px;
+    height: 30px;
+    border: none;
+}
+
+.button_thumb, .__voting {
+    margin-right: 12px;
+}
+
+.voteNow__button {
+    height: 38px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: 1px solid #FFFFFF;
+    padding: 0 20px;
+    margin-bottom: 12px ;
+}
+
+.card_content {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+@media only screen and (min-width: 768px) {
+    .card_content {
+        display: flex;
+        flex-direction: row;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.6) 100%);
+    }
+}
+
+.gauge_bar {
+    width: 100%;
+    height: 36px;
+    display: flex;
+    flex-direction: row;
+}
+.gauge_bar__percent {
+    padding: 0 12px;
+    display: flex;
+}
+
+.banner__text {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.banner__text_title {
+    width: 100%;
+    color: white;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px;
+    margin-bottom: 0;
+}
+.banner__text_info {
+    color: white;
+    margin: 7px 0;
+}
+.eyeBrow_text {
+    color: white;
+    text-align: right;
+}
+.percent_text {
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21.6px;
+    margin: auto 6px;
+}
