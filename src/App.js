@@ -9,9 +9,10 @@ import popeFrancisMedium from './assets/img/pope-francis.@2x.png';
 import bgPeople from "./assets/img/bg-people.png";
 import bgPeople2x from "./assets/img/bg-people.@2x.png";
 
-
+import controversials from './assets/data.json';
 
 function App() {
+
   return (
       <>
         <nav className="nav" role="navigation">
@@ -115,23 +116,20 @@ function App() {
               </svg>
             </button>
           </aside>
+          <h2 style={{fontWeight: "300", fontSize: '24px', marginLeft: '12px', marginBottom: '24px', marginTop: '28px' }}>Previous Rulings </h2>
           <main role="main" id="voting__cards">
-
-            <h2 style={{fontWeight: "300", fontSize: '24px' }}>Previous Rulings </h2>
-
             {
               //if view is more than mobile
                 // display dropdown
             }
 
             {
-              //data.json.map(( dataObj ) => {
-
-                //return <VotingCard data={data}/>
-                //})
+              controversials.data.map(( dataObj ) => {
+                 return <VotingCard key={dataObj.name} data={dataObj}/>
+                })
             }
 
-            <VotingCard/>
+            {/*<VotingCard/>*/}
 
           </main>
           <aside className="banner banner-bottom" role="doc-tip" aria-label="Submit a name">

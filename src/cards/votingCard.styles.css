@@ -1,18 +1,51 @@
-
-.card_container {
-    width: 300px;
-    min-height: 300px;
-    margin: 0;
+#voting__cards {
+    white-space: nowrap;
+    overflow: auto;
+    overflow-y: hidden;
+    height: 300px;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-/* if mediaquery is mobile return max with 400px else return width 100% */
+    flex-direction: row;
+    margin-bottom: 0;
+    width: 100%;
 }
 
 @media only screen and (min-width: 768px) {
     /* For desktop: */
+    #voting__cards {
+        flex-direction: column;
+        overflow-y: visible;
+    }
+}
+
+.card_container {
+    width: 100%;
+    height: 300px;
+    margin: 0 12px 24px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+.card_content {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+
+@media only screen and (min-width: 768px) {
     .card_container {
         width: 100%;
+        background-color: #666666;
+    }
+    .card_content {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.2) 10%, rgba(100, 100, 100, 0.8) 19.79%, #666666 50%, rgba(51, 51, 51, 0.6) 91.88%);;
     }
 }
 
@@ -35,19 +68,6 @@
     margin-bottom: 12px ;
 }
 
-.card_content {
-    display: flex;
-    flex-direction: column;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.6) 100%);
-}
-
-@media only screen and (min-width: 768px) {
-    .card_content {
-        display: flex;
-        flex-direction: row;
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.6) 100%);
-    }
-}
 
 .gauge_bar {
     width: 100%;
@@ -63,20 +83,30 @@
 .banner__text {
     display: flex;
     flex-direction: row;
+    margin-top: 12px;
+}
+
+.text_container {
     width: 100%;
+    margin: 0;
+    white-space: pre-wrap;
+}
+.banner__text_info {
+    color: white;
+    margin: 7px 12px 7px 0;
+    overflow: hidden;
+    display: block;
+    height: fit-content;
+    text-wrap: normal;
 }
 .banner__text_title {
-    width: 100%;
     color: white;
     font-weight: 400;
     font-size: 30px;
     line-height: 36px;
     margin-bottom: 0;
 }
-.banner__text_info {
-    color: white;
-    margin: 7px 0;
-}
+
 .eyeBrow_text {
     color: white;
     text-align: right;
@@ -87,4 +117,10 @@
     font-size: 18px;
     line-height: 21.6px;
     margin: auto 6px;
+}
+
+@media only screen and (min-width: 768px) {
+    .text_container {
+        margin: 0 0 0 15%;
+    }
 }
