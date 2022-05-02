@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/ui-rule-of-thumb/static/css/main.60c0f264.css",
+    "main.js": "/ui-rule-of-thumb/static/js/main.5476a9a4.js",
+    "static/js/787.097be119.chunk.js": "/ui-rule-of-thumb/static/js/787.097be119.chunk.js",
+    "static/media/pope-francis.@2x.png": "/ui-rule-of-thumb/static/media/pope-francis.@2x.b6b9f1fc49046a0f53a0.png",
+    "static/media/bg-people.@2x.png": "/ui-rule-of-thumb/static/media/bg-people.@2x.f7a5848014adc814946b.png",
+    "static/media/kanye.png": "/ui-rule-of-thumb/static/media/kanye.0fbe7f0bf70755206655.png",
+    "static/media/bg-people.png": "/ui-rule-of-thumb/static/media/bg-people.36b10a0945b5262b15e9.png",
+    "static/media/pope-francis.png": "/ui-rule-of-thumb/static/media/pope-francis.7a1a9d7f08f02ebd157f.png",
+    "static/media/thumbs-down.svg": "/ui-rule-of-thumb/static/media/thumbs-down.dc667735e61e11749df44f7835d9cad3.svg",
+    "static/media/thumbs-up.svg": "/ui-rule-of-thumb/static/media/thumbs-up.29598dc33e0987112b3f8f38443f1433.svg",
+    "static/media/search.svg": "/ui-rule-of-thumb/static/media/search.266421b24e33de4f4844f3e6baf44e5a.svg",
+    "index.html": "/ui-rule-of-thumb/index.html",
+    "main.60c0f264.css.map": "/ui-rule-of-thumb/static/css/main.60c0f264.css.map",
+    "main.5476a9a4.js.map": "/ui-rule-of-thumb/static/js/main.5476a9a4.js.map",
+    "787.097be119.chunk.js.map": "/ui-rule-of-thumb/static/js/787.097be119.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.60c0f264.css",
+    "static/js/main.5476a9a4.js"
+  ]
+}
