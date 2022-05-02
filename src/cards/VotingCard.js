@@ -2,12 +2,10 @@ import React from "react";
 import "./votingCard.styles.css"
 import thumbsUp from '../assets/img/thumbs-up.svg';
 import thumbsDown from "../assets/img/thumbs-down.svg";
-import kanyeWest from '../assets/img/kanye.png';
+
 
 const VotingCard = (data) => {
 
-    //console.log(data)
-    /// to persist data below
     const persistVoting = () => {
         // if thumbsUp or thumbsDown are pressed
         // enable voteNow button
@@ -17,12 +15,16 @@ const VotingCard = (data) => {
         // or save in localstorage the quantity of votes, then add them to the gaugeBar
     }
 
-    let url = `url(/${data.data.picture} )`;
+    let url = process.env.NODE_ENV === 'development' ? `/${data.data.picture}` : `https://juanseromo.github.io/ui-rule-of-thumb/${data.data.picture}`;
 
-//    console.log(image)
+    const mobileOrDesk = window.innerWidth
 
+    console.log(mobileOrDesk)
+
+
+    /// 768
     return (
-        <div className='card_container' style={{ backgroundImage: url, backgroundRepeat: 'no-repeat', backgroundPosition: 'left', } } >
+        <div className='card_container' style={{ backgroundImage: `url(${url})`, backgroundRepeat: 'no-repeat',   } } >
             <div className="card_content" >
                 <div className='banner__text' >
                     <button className='button_thumb' style={{backgroundColor: '#FBBD4A' }} >

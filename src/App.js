@@ -1,6 +1,6 @@
 import './App.css';
-import VotingCard from './cards/VotingCard'
-
+import VotingCard from './cards/VotingCard';
+import DropdownMenu from './dropdown/DropdownMenu';
 import thumbsUp from './assets/img/thumbs-up.svg';
 import thumbsDown from "./assets/img/thumbs-down.svg";
 import searchImg from "./assets/img/search.svg";
@@ -12,6 +12,8 @@ import bgPeople2x from "./assets/img/bg-people.@2x.png";
 import controversials from './assets/data.json';
 
 function App() {
+
+  const mobileOrDesk = window.innerWidth
 
   return (
       <>
@@ -116,20 +118,24 @@ function App() {
               </svg>
             </button>
           </aside>
-          <h2 style={{fontWeight: "300", fontSize: '24px', marginLeft: '12px', marginBottom: '24px', marginTop: '28px' }}>Previous Rulings </h2>
+
           <main role="main" id="voting__cards">
+            <div style={{display: "flex", flexDirection: "row", width: '100%', justifyContent: 'space-between', alignItems: "center"}}>
+              <h2 style={{fontWeight: "300", fontSize: '24px', marginLeft: '12px', marginBottom: '24px', marginTop: '28px' }}>Previous Rulings </h2>
+              { mobileOrDesk > 768 ? <DropdownMenu/> : null }
+            </div>
+
             {
               //if view is more than mobile
                 // display dropdown
             }
-
-            {
-              controversials.data.map(( dataObj ) => {
-                 return <VotingCard key={dataObj.name} data={dataObj}/>
+            <div className='controversials_container' >
+              {
+                controversials.data.map(( dataObj ) => {
+                  return <VotingCard key={dataObj.name} data={dataObj}/>
                 })
-            }
-
-            {/*<VotingCard/>*/}
+              }
+            </div>
 
           </main>
           <aside className="banner banner-bottom" role="doc-tip" aria-label="Submit a name">

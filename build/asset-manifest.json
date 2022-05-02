@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.292cacb8.css",
+    "main.js": "/static/js/main.37126051.js",
+    "static/js/787.097be119.chunk.js": "/static/js/787.097be119.chunk.js",
+    "static/media/pope-francis.@2x.png": "/static/media/pope-francis.@2x.b6b9f1fc49046a0f53a0.png",
+    "static/media/bg-people.@2x.png": "/static/media/bg-people.@2x.f7a5848014adc814946b.png",
+    "static/media/bg-people.png": "/static/media/bg-people.36b10a0945b5262b15e9.png",
+    "static/media/pope-francis.png": "/static/media/pope-francis.7a1a9d7f08f02ebd157f.png",
+    "static/media/thumbs-down.svg": "/static/media/thumbs-down.dc667735e61e11749df44f7835d9cad3.svg",
+    "static/media/thumbs-up.svg": "/static/media/thumbs-up.29598dc33e0987112b3f8f38443f1433.svg",
+    "static/media/search.svg": "/static/media/search.266421b24e33de4f4844f3e6baf44e5a.svg",
+    "index.html": "/index.html",
+    "main.292cacb8.css.map": "/static/css/main.292cacb8.css.map",
+    "main.37126051.js.map": "/static/js/main.37126051.js.map",
+    "787.097be119.chunk.js.map": "/static/js/787.097be119.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.292cacb8.css",
+    "static/js/main.37126051.js"
+  ]
+}
