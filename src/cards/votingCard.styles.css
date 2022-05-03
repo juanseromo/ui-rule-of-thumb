@@ -125,7 +125,7 @@
 
 
 .gauge_bar {
-    width: 100%;
+    /*width: 100%;*/
     height: 36px;
     display: flex;
     flex-direction: row;
@@ -135,6 +135,7 @@
 .gauge_bar__percent {
     padding: 0 12px;
     display: flex;
+    /*//width: 100%;*/
 }
 
 .banner__text {

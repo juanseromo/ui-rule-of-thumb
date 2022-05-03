@@ -21,9 +21,9 @@ function App() {
     setCurrentView(event.target.innerText)
   }
 
-  useEffect(()=>{
-    console.log(currentView);
-  },[currentView])
+  // useEffect(()=>{
+  //   console.log(currentView);
+  // },[currentView])
 
   return (
       <>
