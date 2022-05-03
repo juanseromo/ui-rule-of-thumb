@@ -15,13 +15,7 @@ const VotingCard = ({data, currentView}) => {
     const [thumbUpClicked, setThumbUpClicked] = useState(null)
     const [thumbDownClicked, setThumbDownClicked] = useState(null)
 
-    const persistVoting = () => {
-
-        // modify data object and save to localstorage updated values
-        // or save in localstorage the quantity of votes, then add them to the gaugeBar
-    };
-
-    const thumbsUpClick = (e) => {
+    const thumbsUpClick = () => {
         setVoteNow('Vote Now');
         setThumbUpClicked(true);
         setThumbDownClicked(null)
@@ -33,12 +27,12 @@ const VotingCard = ({data, currentView}) => {
         setThumbDownClicked(true)
     }
 
-    const voteNowClick = (e) => {
+    const voteNowClick = () => {
         setEyebrowText('Thank you for your vote!');
         setVoteNow('Vote Again');
         setThumbUpClicked(null);
         setThumbDownClicked(null);
-        localStorage.setItem('VOTE_ADD', `${ localStorage.getItem('VOTE_ADD') + 1 }`)
+        //localStorage.setItem('VOTE_ADD', `${ localStorage.getItem('VOTE_ADD') + 1 }`)
     }
 
     const voteAgainClick = () => {
@@ -85,8 +79,6 @@ const VotingCard = ({data, currentView}) => {
                         {
                             mainThumb === 'up' ? <img src={thumbsUp} alt="thumbsUp" /> :
                                 <img src={thumbsDown} alt="thumbsDown" />
-                            // if most voted rating is more than 50%
-                            // display thumbs up else display down
                         }
 
                     </button>
@@ -114,20 +106,9 @@ const VotingCard = ({data, currentView}) => {
                         </button>
                         {
                             voteNow ?
-                            //should be disabled by default
-                            //if either button is pressed should toggle and enable vote now
                             <button className="voteNow__button" onClick={ voteNow === 'Vote Now' ? voteNowClick : voteAgainClick} >
                                 {voteNow}
                             </button> : null
-                            // if voteNow is pressed
-                            // post data
-                            // change eyeBrow_text to thank you for your vote!
-                            // vote now text shoylc change to the copy "Vote Again"
-                            // gaugebar should reflect changes and percentage should be updated
-
-                            // if voteAgain is pressed all buttons return to previuos state and
-                            // modified texts shoyld be reverted to original state
-                            // gauge bar should persist votes already posted
                         }
                     </div>
                 </div>

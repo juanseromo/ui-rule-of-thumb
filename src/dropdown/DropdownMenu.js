@@ -19,7 +19,7 @@ const CustomMenu = styled(Menu)`
     padding-top: 0;
 `
 
-const DropdownMenu = ({currentView, handleClickProp}) => {
+const DropdownMenu = ({ handleClickProp}) => {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {

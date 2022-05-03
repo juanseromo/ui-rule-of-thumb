@@ -128,7 +128,7 @@ function App() {
             <div style={{display: "flex", flexDirection: "row", width: '100%', justifyContent: 'space-between', alignItems: "center"}}>
               <h2 style={{fontWeight: "300", fontSize: '24px', marginLeft: '12px', marginBottom: '24px', marginTop: '28px' }}>Previous Rulings </h2>
               { mobileOrDesk > 768 ?
-                  <DropdownMenu currentView={currentView} handleClickProp={handleClickProp} /> : null
+                  <DropdownMenu handleClickProp={handleClickProp} /> : null
               }
             </div>
             <div className={ currentView === 'List' || currentView === null ? 'controversials_container' : 'controversials_container__grid' } >
