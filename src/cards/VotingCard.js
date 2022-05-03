@@ -1,23 +1,52 @@
 import React, {useEffect, useState} from "react";
+import moment from 'moment';
 import "./votingCard.styles.css"
 import thumbsUp from '../assets/img/thumbs-up.svg';
 import thumbsDown from "../assets/img/thumbs-down.svg";
 
 
-const VotingCard = ({data, currentView, mobileOrDesk}) => {
+const VotingCard = ({data, currentView}) => {
 
     const [positiveWidth, setPositiveWidth] = useState(null);
     const [negativeWidth, setNegativeWidth] = useState(null);
     const [mainThumb, setMainThumb] = useState('up');
+    const [voteNow, setVoteNow] = useState(null);
+    const [eyebrowText, setEyebrowText] = useState( moment(data.lastUpdated).fromNow() + ' in ' + data.category);
+    const [thumbUpClicked, setThumbUpClicked] = useState(null)
+    const [thumbDownClicked, setThumbDownClicked] = useState(null)
 
     const persistVoting = () => {
-        // if thumbsUp or thumbsDown are pressed
-        // enable voteNow button
-        // if voteNow button is pressed
-        // modify texts
+
         // modify data object and save to localstorage updated values
         // or save in localstorage the quantity of votes, then add them to the gaugeBar
     };
+
+    const thumbsUpClick = (e) => {
+        setVoteNow('Vote Now');
+        setThumbUpClicked(true);
+        setThumbDownClicked(null)
+    }
+
+    const thumbsDownClick = () => {
+        setVoteNow('Vote Now');
+        setThumbUpClicked(null);
+        setThumbDownClicked(true)
+    }
+
+    const voteNowClick = (e) => {
+        setEyebrowText('Thank you for your vote!');
+        setVoteNow('Vote Again');
+        setThumbUpClicked(null);
+        setThumbDownClicked(null);
+        localStorage.setItem('VOTE_ADD', `${ localStorage.getItem('VOTE_ADD') + 1 }`)
+    }
+
+    const voteAgainClick = () => {
+        setVoteNow(null);
+        setThumbUpClicked(null);
+        setThumbDownClicked(null);
+        setEyebrowText( moment(data.lastUpdated).fromNow() + ' in ' + data.category)
+    }
 
     const getNegativeWidth = () => {
         let percentage1
@@ -75,20 +104,21 @@ const VotingCard = ({data, currentView, mobileOrDesk}) => {
                     </div>
                 </div>
                 <div style={{ marginRight: '12px', display: "flex", flexDirection: 'column', alignSelf: 'end' }}>
-                    <h5 className='eyeBrow_text'> 1 month ago in Entertainment</h5>
+                    <h5 className='eyeBrow_text'> {eyebrowText} </h5>
                     <div className='voting_buttons' style={{display: 'flex', flexDirection: 'row'}}>
-                        <button className='button_thumb __voting' style={{backgroundColor: '#FBBD4A' }} >
+                        <button onClick={thumbsUpClick} className='button_thumb __voting' style={{ border: thumbUpClicked ? '1px solid #FFFFFF' : "none", backgroundColor: 'rgb(60, 187, 180)' }} >
                             <img src={thumbsUp} alt="thumbsUp" />
                         </button>
-                        <button className='button_thumb __voting' style={{backgroundColor: '#FBBD4A' }} >
+                        <button onClick={thumbsDownClick} className='button_thumb __voting' style={{ border: thumbDownClicked ? '1px solid #FFFFFF' : "none", backgroundColor: '#FBBD4A' }} >
                             <img src={thumbsDown} alt="thumbsDown" />
                         </button>
                         {
+                            voteNow ?
                             //should be disabled by default
                             //if either button is pressed should toggle and enable vote now
-                            <button className="voteNow__button" >
-                            Vote Now
-                            </button>
+                            <button className="voteNow__button" onClick={ voteNow === 'Vote Now' ? voteNowClick : voteAgainClick} >
+                                {voteNow}
+                            </button> : null
                             // if voteNow is pressed
                             // post data
                             // change eyeBrow_text to thank you for your vote!
@@ -105,7 +135,7 @@ const VotingCard = ({data, currentView, mobileOrDesk}) => {
             <div className='gauge_bar' >
                 <div className='gauge_bar__percent' style={{width: negativeWidth , backgroundColor: 'rgba(60, 187, 180, 0.6)'}}>
                     <img width='15px' src={thumbsUp} alt="thumbsUp" />
-                    <h3 className="percent_text"> { data.votes.positive } </h3>
+                    <h3 className="percent_text"> { data.votes.positive  } </h3>
                 </div>
                 <div className='gauge_bar__percent' style={{width: positiveWidth , backgroundColor: 'rgba(249, 173, 29, 0.6)', flexDirection: "row-reverse" }}>
                     <img width='15px' src={thumbsDown} alt="thumbsDown" />

@@ -1,3 +1,4 @@
+import React from "react";
 import './App.css';
 import VotingCard from './cards/VotingCard';
 import DropdownMenu from './dropdown/DropdownMenu';
@@ -10,20 +11,14 @@ import bgPeople from "./assets/img/bg-people.png";
 import bgPeople2x from "./assets/img/bg-people.@2x.png";
 
 import controversials from './assets/data.json';
-import React, {useEffect} from "react";
 
 function App() {
-
   const mobileOrDesk = window.innerWidth
   const [currentView, setCurrentView] = React.useState(null);
 
   const handleClickProp = (event) => {
     setCurrentView(event.target.innerText)
   }
-
-  // useEffect(()=>{
-  //   console.log(currentView);
-  // },[currentView])
 
   return (
       <>
