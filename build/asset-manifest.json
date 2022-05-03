@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ui-rule-of-thumb/static/css/main.10bcf163.css",
-    "main.js": "/ui-rule-of-thumb/static/js/main.cbbcceca.js",
+    "main.css": "/ui-rule-of-thumb/static/css/main.b6a02852.css",
+    "main.js": "/ui-rule-of-thumb/static/js/main.95fcddd6.js",
     "static/js/787.097be119.chunk.js": "/ui-rule-of-thumb/static/js/787.097be119.chunk.js",
     "static/media/pope-francis.@2x.png": "/ui-rule-of-thumb/static/media/pope-francis.@2x.b6b9f1fc49046a0f53a0.png",
     "static/media/bg-people.@2x.png": "/ui-rule-of-thumb/static/media/bg-people.@2x.f7a5848014adc814946b.png",
@@ -11,12 +11,12 @@
     "static/media/thumbs-up.svg": "/ui-rule-of-thumb/static/media/thumbs-up.29598dc33e0987112b3f8f38443f1433.svg",
     "static/media/search.svg": "/ui-rule-of-thumb/static/media/search.266421b24e33de4f4844f3e6baf44e5a.svg",
     "index.html": "/ui-rule-of-thumb/index.html",
-    "main.10bcf163.css.map": "/ui-rule-of-thumb/static/css/main.10bcf163.css.map",
-    "main.cbbcceca.js.map": "/ui-rule-of-thumb/static/js/main.cbbcceca.js.map",
+    "main.b6a02852.css.map": "/ui-rule-of-thumb/static/css/main.b6a02852.css.map",
+    "main.95fcddd6.js.map": "/ui-rule-of-thumb/static/js/main.95fcddd6.js.map",
     "787.097be119.chunk.js.map": "/ui-rule-of-thumb/static/js/787.097be119.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.10bcf163.css",
-    "static/js/main.cbbcceca.js"
+    "static/css/main.b6a02852.css",
+    "static/js/main.95fcddd6.js"
   ]
 }
