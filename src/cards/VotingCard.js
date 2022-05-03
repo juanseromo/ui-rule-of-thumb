@@ -4,7 +4,7 @@ import thumbsUp from '../assets/img/thumbs-up.svg';
 import thumbsDown from "../assets/img/thumbs-down.svg";
 
 
-const VotingCard = (data) => {
+const VotingCard = ({data, currentView, mobileOrDesk}) => {
 
     const persistVoting = () => {
         // if thumbsUp or thumbsDown are pressed
@@ -15,17 +15,13 @@ const VotingCard = (data) => {
         // or save in localstorage the quantity of votes, then add them to the gaugeBar
     }
 
-    let url = process.env.NODE_ENV === 'development' ? `/${data.data.picture}` : `https://juanseromo.github.io/ui-rule-of-thumb/${data.data.picture}`;
+    let url = process.env.NODE_ENV === 'development' ? `/${data.picture}` : `https://juanseromo.github.io/ui-rule-of-thumb/${data.picture}`;
 
-    const mobileOrDesk = window.innerWidth
+    console.log(currentView)
 
-    console.log(mobileOrDesk)
-
-
-    /// 768
     return (
-        <div className='card_container' style={{ backgroundImage: `url(${url})`, backgroundRepeat: 'no-repeat',   } } >
-            <div className="card_content" >
+        <div className={ currentView === 'List' || currentView === null ? 'card_container' : 'card_container__grid' } style={{ backgroundImage: `url(${url})`, backgroundRepeat: 'no-repeat',   } } >
+            <div className={ currentView === 'List' || currentView === null ? 'card_content' : 'card_content__grid' } >
                 <div className='banner__text' >
                     <button className='button_thumb' style={{backgroundColor: '#FBBD4A' }} >
                         {
@@ -37,17 +33,15 @@ const VotingCard = (data) => {
                     <div className='text_container'>
                         <h2 className='banner__text_title'>
                             {
-                                data.data.name
+                                data.name
                             }
                         </h2>
                         <p className='banner__text_info'>
                             {
-                                data.data.description
+                                data.description
                             }
                         </p>
-
                     </div>
-
                 </div>
                 <div style={{ marginRight: '12px', display: "flex", flexDirection: 'column', alignSelf: 'end' }}>
                     <h5 className='eyeBrow_text'> 1 month ago in Entertainment</h5>

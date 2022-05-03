@@ -19,7 +19,7 @@ const CustomMenu = styled(Menu)`
     padding-top: 0;
 `
 
-const DropdownMenu = () => {
+const DropdownMenu = ({currentView, handleClickProp}) => {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -28,6 +28,10 @@ const DropdownMenu = () => {
     const handleClose = () => {
         setAnchorEl(null);
     };
+    const handleClickItem = (event) => {
+        handleClickProp(event)
+        handleClose();
+    }
 
     return (
         <div>
@@ -52,9 +56,9 @@ const DropdownMenu = () => {
                 style={{padding: '0'}}
             >
                 <MenuItem style={{ border: '2px solid #333333', borderTop: '0', width: '131px',
-                    height: '28px' }} onClick={handleClose}>List</MenuItem>
+                    height: '28px' }} onClick={handleClickItem}>List</MenuItem>
                 <MenuItem style={{border: '2px solid #333333',  borderTop: '0', width: '131px',
-                    height: '28px', }} onClick={handleClose}>Grid</MenuItem>
+                    height: '28px', }} onClick={handleClickItem}>Grid</MenuItem>
             </CustomMenu>
         </div>
     )

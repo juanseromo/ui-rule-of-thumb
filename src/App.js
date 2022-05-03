@@ -10,10 +10,20 @@ import bgPeople from "./assets/img/bg-people.png";
 import bgPeople2x from "./assets/img/bg-people.@2x.png";
 
 import controversials from './assets/data.json';
+import React, {useEffect} from "react";
 
 function App() {
 
   const mobileOrDesk = window.innerWidth
+  const [currentView, setCurrentView] = React.useState(null);
+
+  const handleClickProp = (event) => {
+    setCurrentView(event.target.innerText)
+  }
+
+  useEffect(()=>{
+    console.log(currentView);
+  },[currentView])
 
   return (
       <>
@@ -122,17 +132,14 @@ function App() {
           <main role="main" id="voting__cards">
             <div style={{display: "flex", flexDirection: "row", width: '100%', justifyContent: 'space-between', alignItems: "center"}}>
               <h2 style={{fontWeight: "300", fontSize: '24px', marginLeft: '12px', marginBottom: '24px', marginTop: '28px' }}>Previous Rulings </h2>
-              { mobileOrDesk > 768 ? <DropdownMenu/> : null }
+              { mobileOrDesk > 768 ?
+                  <DropdownMenu currentView={currentView} handleClickProp={handleClickProp} /> : null
+              }
             </div>
-
-            {
-              //if view is more than mobile
-                // display dropdown
-            }
-            <div className='controversials_container' >
+            <div className={ currentView === 'List' || currentView === null ? 'controversials_container' : 'controversials_container__grid' } >
               {
                 controversials.data.map(( dataObj ) => {
-                  return <VotingCard key={dataObj.name} data={dataObj}/>
+                  return <VotingCard key={dataObj.name} data={dataObj} currentView={currentView} mobileOrDesk={mobileOrDesk} />
                 })
               }
             </div>
